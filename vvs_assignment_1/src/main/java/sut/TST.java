@@ -139,21 +139,21 @@ public class TST<T> {
         	return null;
         int length = 0;
         Node<T> x = root;
-        int i = 0;
+        int i = 0; 
         while (x != null && i < query.length()) {   
             char c = query.charAt(i);
             if      (c < x.c) x = x.left;
             else if (c > x.c) x = x.right;
-            else {
+            else { 
                 i++;
                 if (x.val != null) 
                 	length = i;
-                x = x.mid;
-            }
-        }
+                x = x.mid; 
+            }   
+        }    
         return query.substring(0, length);
-    }
-
+    }  
+  
     /**
      * Returns all keys in the symbol table as an {@code Iterable}.
      * To iterate over all of the keys in the symbol table named {@code st},

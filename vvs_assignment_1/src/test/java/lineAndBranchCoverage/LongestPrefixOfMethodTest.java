@@ -40,7 +40,7 @@ public class LongestPrefixOfMethodTest {
 	public final void testLongestPrefixOfMethodWithNullRootReturns() {
 		TST<Integer> tst = new TST<Integer>();
 		tst.put("hyperactive", 5); //to pass null check
-		assertEquals("", tst.longestPrefixOf("hyper")); //while with true false, o i incrementou e torna a condicao falsa mas o x nao e null
+		assertEquals("", tst.longestPrefixOf("hyper")); //while with true false
 	}	
 }
 
