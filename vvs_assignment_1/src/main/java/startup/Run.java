@@ -22,7 +22,7 @@ public class Run {
 		
 		for (String key : st.keys()) {
             System.out.println(key + " " + st.get(key));
-        }
+        } 
 		
 		System.out.println("longestPrefixOf(\"shellsort\"):");
 		System.out.println(st.longestPrefixOf("shellsort"));

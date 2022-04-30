@@ -34,7 +34,7 @@ import java.util.*;
  */
 public class TST<T> {
 	
-    private Node<T> root;   // root of TST
+    public Node<T> root;   // root of TST
     private int n;          // size
 
     private static class Node<T> {
@@ -228,6 +228,34 @@ public class TST<T> {
         }
         if (c == '.' || c > x.c) 
         	collect(x.right, prefix, i, pattern, queue);
-    }
+    } 
 
+    
+    @Override
+    public boolean equals(Object o) {
+    	TST<T> trie = (TST<T>) o;
+    	List<String> thisKeys = (List<String>) this.keys();
+    	List<String> inputTrieKeys = (List<String>) trie.keys();
+    	if(!(thisKeys.containsAll(inputTrieKeys) && inputTrieKeys.containsAll(thisKeys))) {
+    		return false;
+    	}
+    	Collections.sort(thisKeys);
+    	Collections.sort(inputTrieKeys);
+    	for(int i = 0; i < thisKeys.size(); i++) {
+    		int valueThisKey = (int) this.get(thisKeys.get(i));
+    		int valueInputKey = (int) trie.get(inputTrieKeys.get(i));
+    		if(valueThisKey != valueInputKey) {
+    			return false;
+    		}
+    	}
+		return true;
+    }  
+  
+    public void delete(String key) {
+    	Node<T> nodeOfKey = (Node<T>) this.get(this.root, key, 0);
+    	if(nodeOfKey == null) {
+    		return;
+    	}
+    	nodeOfKey.val = null;
+    }
 }

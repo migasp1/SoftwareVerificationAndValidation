@@ -27,7 +27,8 @@ public class BaseChoiceCoverageTests {
 		int trieSize = tst.size();
 		assertEquals(trieSize, 2); 
 	}	 
-	
+
+	@Test
 	public final void testBaseChoiceThree() {
 		TST<Integer> tst = new TST<Integer>();
 		tst.put("drain", 5);
@@ -35,8 +36,8 @@ public class BaseChoiceCoverageTests {
 		String newKey = "chew";
 		tst.put(newKey, 14);
 		int trieSize = tst.size();
-		assertEquals(trieSize, 2);
-	}	 
+		assertEquals(trieSize, 3); 
+	}	  
 	
 	@Test
     public void testBaseChoiceFour(){
@@ -53,11 +54,12 @@ public class BaseChoiceCoverageTests {
     public void testBaseChoiceFive(){
 		//typical still needed
         TST<Integer> tst = new TST<>();
-        tst.put("flame", 5);
-        tst.put("flamingo", 20);
-        String newKey = "flamingo";
+        tst.put("code", 5);
+        tst.put("drill", 15);
+        tst.put("frightening", 20);
+        String newKey = "drill";
         tst.put(newKey, 14);
         int trieSize = tst.size();
-		assertEquals(trieSize, 2);
+		assertEquals(trieSize, 3);
     }
 }
